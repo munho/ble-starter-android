@@ -334,6 +334,9 @@ object ConnectionManager {
             is MtuRequest -> with(operation) {
                 gatt.requestMtu(mtu)
             }
+            else -> {
+                Timber.e("Unknown operation: $operation.")
+            }
         }
     }
 
